@@ -9,11 +9,11 @@ public class Logbook {
     @PrimaryKey
     public int uid;
 
-    @ColumnInfo(name = "object")
-    public String object;
-    public String observer;
-    public String latitude;
+    @ColumnInfo(name = "Object")
+    public String Object;
+    public String Observer;
     public String longitude;
+    public String latitude;
     public String date;
     public String time;
     public String seeing;
