@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.erefem.stargazing.adapter.LogbookAdapter;
 import com.erefem.stargazing.database.AppDatabase;
@@ -23,13 +23,9 @@ import java.util.List;
 public class  ObsLogBook extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    //List<MyModel> myModelList;
-    //CustomAdapter customAdapter;
-
-    ProgressDialog progressDialog;
     private AppDatabase database;
     private LogbookAdapter logbookAdapter;
-    private List<Logbook> list = new ArrayList<>();
+    private final List<Logbook> list = new ArrayList<>();
     private AlertDialog.Builder dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +56,7 @@ public class  ObsLogBook extends AppCompatActivity {
                                 Logbook logbook = list.get(position);
                                 database.logbookDao().delete(logbook);
                                 onStart();
+                                Toast.makeText(getApplicationContext(), "Deleted Files", Toast.LENGTH_SHORT).show();
                                 break;
                         }
                     }

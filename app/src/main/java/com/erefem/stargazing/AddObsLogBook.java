@@ -138,6 +138,7 @@ public class AddObsLogBook extends AppCompatActivity {
         database = AppDatabase.getInstance(getApplicationContext());
         Intent intent = getIntent();
         uid = intent.getIntExtra("uid",0);
+
         if (uid>0){
             isEdit = true;
             Logbook logbook = database.logbookDao().get(uid);
@@ -147,24 +148,18 @@ public class AddObsLogBook extends AppCompatActivity {
             et_longitude.setText(logbook.longitude);
             et_date.setText(logbook.date);
             et_time.setText(logbook.time);
-            //rbExceptional.setText(logbook.seeing);
-            //rbGood.setText(logbook.seeing);
-            //rbOk.setText(logbook.seeing);
-            //rbPoor.setText(logbook.seeing);
-            //rbVery_poor.setText(logbook.seeing);
-            rbSeeing.setText(logbook.seeing);
+            //rbSeeing.setText(logbook.seeing);
             et_instrument.setText(logbook.instrument);
             et_magnification.setText(logbook.magnification);
             et_filter.setText(logbook.filter);
             et_comment.setText(logbook.comment);
         }else{
-            isEdit = false;
+         isEdit = false;
         }
         btn_save_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                rg_Seeing = (RadioGroup) findViewById(R.id.rg_seeing);
                 int selectedRadioButton = rg_Seeing.getCheckedRadioButtonId();
                 rbSeeing = (RadioButton) findViewById(selectedRadioButton);
 
