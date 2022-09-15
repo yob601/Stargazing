@@ -19,8 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp">
 
-            <LinearLayout
-                style="@style/BorderParam">
+            <LinearLayout style="@style/BorderParam">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -31,14 +30,12 @@
                         style="@style/TextParameter.Name"
                         android:text="Telescope F Length" />
 
-                    <Space
-                        style="@style/Spacing"/>
+                    <Space style="@style/Spacing" />
 
                     <EditText
                         android:id="@+id/et_telescope_focal_length1"
                         style="@style/TextParameter.InputDecimal"
-                        android:hint="mm"
-                        />
+                        android:hint="mm" />
 
                     <TextView
                         style="@style/TextParameter.Unit"
@@ -49,14 +46,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <TextView
                         style="@style/TextParameter.Name"
                         android:text="Eyepiece F Length" />
 
-                    <Space
-                        style="@style/Spacing" />
+                    <Space style="@style/Spacing" />
 
                     <EditText
                         android:id="@+id/et_eyepiece_focal_length1"
@@ -78,12 +74,11 @@
                         style="@style/TextParameter.Name"
                         android:text="Magnification" />
 
-                    <Space
-                        style="@style/Spacing" />
+                    <Space style="@style/Spacing" />
 
                     <EditText
-                        style="@style/TextParameter.Result"
-                        android:id="@+id/et_magnification1" />
+                        android:id="@+id/et_magnification1"
+                        style="@style/TextParameter.Result" />
 
                     <TextView
                         style="@style/TextParameter.Unit"
@@ -92,8 +87,8 @@
                 </LinearLayout>
 
                 <Button
-                    style="@style/ButtonParam"
                     android:id="@+id/btn_magnification"
+                    style="@style/ButtonParam"
                     android:text="Calculate Magnification" />
 
             </LinearLayout>

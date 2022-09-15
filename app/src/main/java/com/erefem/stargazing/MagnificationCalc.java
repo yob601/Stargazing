@@ -14,7 +14,7 @@ public class MagnificationCalc extends AppCompatActivity {
 
     EditText
             etTelescopeFocalLength1, etEyepieceFocalLength1, etTelescopeFocalLength2,
-            etTelescopeAperture, etMagnification2, etMaxMagnification;
+            etTelescopeAperture,etMagnification2, etMaxMagnification;
     TextView
             etMagnification1, etEyepieceFocalLength2;
     Button
@@ -36,6 +36,7 @@ public class MagnificationCalc extends AppCompatActivity {
         etMagnification2 = findViewById(R.id.et_magnification2);
         etEyepieceFocalLength2 = findViewById(R.id.et_eyepiece_focal_length2);
         etTelescopeAperture = findViewById(R.id.et_telescope_aperture);
+        etMaxMagnification = findViewById(R.id.et_max_magnification);
 
         btnMagnification = findViewById(R.id.btn_magnification);
         btnEyepiece = findViewById(R.id.btn_eyepiece);
@@ -73,8 +74,8 @@ public class MagnificationCalc extends AppCompatActivity {
         });
 
         btnMaxMagnification.setOnClickListener(view -> {
-            if (SUtils.isEmpty(etMaxMagnification)) {
-                SUtils.setToast(etMaxMagnification, "This field cannot be blank!");
+            if (SUtils.isEmpty(etTelescopeAperture)) {
+                SUtils.setToast(etTelescopeAperture, "This field cannot be blank!");
             } else {
                 float telescopeAperture = SUtils.getInteger(etTelescopeAperture);
                 float maxMagnification = (float) (telescopeAperture * 2.5);

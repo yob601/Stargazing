@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -52,7 +51,7 @@ public class FieldOfViewCalc extends AppCompatActivity {
                 float eyepieceFOV = SUtils.getInteger(etEyepieceFOV);
                 float eyepieceFocalLength = SUtils.getInteger(etEyepieceFocalLength);
                 float telescopeFocalLength = SUtils.getInteger(etTelescopeFocalLength);
-                float actualFOV = eyepieceFOV / (eyepieceFocalLength / telescopeFocalLength);
+                float actualFOV = eyepieceFOV / (telescopeFocalLength / eyepieceFocalLength);
                 etActualFOV.setText(decimal.format(actualFOV));
             }
         });
